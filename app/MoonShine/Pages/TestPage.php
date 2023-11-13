@@ -11,6 +11,7 @@ use MoonShine\Decorations\Tab;
 use MoonShine\Decorations\Tabs;
 use MoonShine\Decorations\Heading;
 use MoonShine\Metrics\ValueMetric;
+use MoonShine\Metrics\LineChartMetric;
 use MoonShine\Metrics\DonutChartMetric;
 use MoonShine\Decorations\{Block, Column, Grid, TextBlock, Divider, Collapse, Fragment};
 
@@ -36,7 +37,7 @@ class TestPage extends Page
 	public function components(): array
 	{
 		return [
-			
+
 			Grid::make([
 				Column::make([
 					Block::make([
@@ -62,21 +63,21 @@ class TestPage extends Page
 
 			Divider::make('Разделитель')->centered(),
 
-			Block::make('Тестовый блок', [ 
+			Block::make('Тестовый блок', [
 				Text::make('Name', 'first_name'),
 			]),
 
-			Collapse::make('Title/Slug', [ 
+			Collapse::make('Title/Slug', [
 				Text::make('Title'),
 				Text::make('Slug')
 			])->show(),
 
 			Block::make([
-				Tabs::make([ 
+				Tabs::make([
 					Tab::make('Seo', [
 						Text::make('Seo title 1'),
 						Text::make('Seo title 2'),
-					]), 
+					]),
 					Tab::make('Categories', [
 						Text::make('Seo title 3'),
 						Text::make('Seo title 4'),
@@ -89,7 +90,7 @@ class TestPage extends Page
 
 			Divider::make(),
 
-			Grid::make([ 
+			Grid::make([
 				ValueMetric::make('Articles')
 					->value(345)
 					->columnSpan(3),
@@ -107,6 +108,11 @@ class TestPage extends Page
 					->columnSpan(3),
 			]),
 
+			Divider::make(),
+
+			LineChartMetric::make('График')->line([
+				[10, 3, 8, 0, 20, 50, 100, 1000],
+			]),
 		];
 	}
 }

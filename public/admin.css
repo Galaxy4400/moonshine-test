@@ -12,7 +12,3 @@
 .btn.btn-success:hover {
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
-
-.menu-inner-item._is-active {
-	pointer-events: none;
-}

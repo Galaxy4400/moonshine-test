@@ -8,6 +8,7 @@ use MoonShine\Menu\MenuItem;
 use MoonShine\Menu\MenuGroup;
 use MoonShine\Menu\MenuDivider;
 use App\MoonShine\Pages\TestPage;
+use App\MoonShine\Resources\PostResource;
 use MoonShine\Resources\MoonShineUserResource;
 use MoonShine\Resources\MoonShineUserRoleResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
@@ -28,6 +29,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 	{
 		return [
 			MenuItem::make('Тестовая', new TestPage()),
+			MenuItem::make('Посты', new PostResource()),
 			MenuDivider::make(), 
 			MenuGroup::make('Админка', [
 				MenuItem::make('Администраторы', new MoonShineUserResource()),
