@@ -15,7 +15,11 @@ return new class extends Migration
 			$table->id();
 			$table->string('title');
 			$table->text('description');
+			$table->text('text');
 			$table->timestamps();
+
+			$table->fullText('title');
+			$table->fullText('description');
 		});
 	}
 

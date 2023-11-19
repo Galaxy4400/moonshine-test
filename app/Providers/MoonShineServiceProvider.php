@@ -28,7 +28,6 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 	protected function menu(): array
 	{
 		return [
-			MenuItem::make('Тестовая', new TestPage()),
 			MenuItem::make('Посты', new PostResource()),
 			MenuDivider::make(), 
 			MenuGroup::make('Админка', [
@@ -51,7 +50,9 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 				'success-bg' => '#1AA244',
 			],
 			'darkColors' => [
-				'success-bg' => '#1AA244',
+				'primary' => '#1e62a8',
+				'secondary' => '#aa373f',
+				'success-bg' => '#22723b',
 			]
 		];
 	}
